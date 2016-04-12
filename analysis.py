@@ -37,7 +37,7 @@ def artists_total():
 # get total number of tracks
 def tracks_total():
 
-    tracks = data.__getitem__('tracks')
+    tracks = data.__getitem__('track')
     tracks = tracks.unique()
     print 'Total number of tracks: {}'.format(len(tracks))
 
@@ -83,12 +83,14 @@ def artist_track_stats():
 # main function
 def main():
 
+    # get total number of tweets
+    print 'Total number of tweets: {}'.format(len(data.__getitem__('timestamp')))
     # get total number of users
     # users_total()
     # get total number of artists
-    artists_total()
+    # artists_total()
     # get total number of tracks
-    # tracks_total()
+    tracks_total()
 
     # get source stats
     # source_stats()
