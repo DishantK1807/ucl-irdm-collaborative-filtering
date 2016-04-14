@@ -1,6 +1,5 @@
 
 # import packages
-from collections import Counter
 import graphlab as gl
 
 ########################################################################################################################
@@ -10,7 +9,7 @@ import graphlab as gl
 def load_data():
 
     # load data
-    data = gl.SFrame.read_csv('data/nowplaying/nowplaying_subset_2016_04_06.csv', delimiter=',', verbose=False)
+    data = gl.SFrame.read_csv('data/nowplaying/nowplaying_2016_04_06.csv', delimiter=',', verbose=False)
 
     # return data
     return data
@@ -52,12 +51,14 @@ def tracks_total(data):
 ########################################################################################################################
 
 # gets user stats
-def user_stats(data):
+def user_stats():
 
     # get user stats
-    users = data.groupby('user_id',
-                         {'count': gl.aggregate.COUNT('user_id')}).sort('count', ascending=False)
-    users.save('analysis/users_2016_04_06.csv')
+    user_id_item_id = gl.SFrame.read_csv('analysis/user_id_item_id_2016_04_06.csv', delimiter=',', verbose=False)
+    user_count_3 = gl.SArray('analysis/user_count_3_2016_04_06.csv')
+
+    sample_count_3 = user_id_item_id.filter_by(user_count_3, 'user_id').sort('user_id', ascending=False)
+    sample_count_3.save('analysis/sample_count_3_2016_04_06.csv')
 
 
 ########################################################################################################################
@@ -115,7 +116,7 @@ def artist_track_stats(data):
 def main():
 
     # load data
-    data = load_data()
+    # data = load_data()
 
     # get total number of tweets
     # print 'Total number of tweets: {}'.format(len(data.__getitem__('timestamp')))
@@ -127,7 +128,7 @@ def main():
     # tracks_total(data)
 
     # get user_stats()
-    user_stats(data)
+    user_stats()
     # get source stats
     # source_stats(data)
     # get artist stats
