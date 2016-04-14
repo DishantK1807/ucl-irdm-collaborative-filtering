@@ -1,19 +1,26 @@
 
 # import packages
+from collections import Counter
 import graphlab as gl
 
 ########################################################################################################################
 
 
-# load data
-data = gl.SFrame.read_csv('data/nowplaying/nowplaying_2016_04_06.csv', delimiter=',', verbose=False)
+# loads data
+def load_data():
+
+    # load data
+    data = gl.SFrame.read_csv('data/nowplaying/nowplaying_subset_2016_04_06.csv', delimiter=',', verbose=False)
+
+    # return data
+    return data
 
 
 ########################################################################################################################
 
 
 # get total number of users
-def users_total():
+def users_total(data):
 
     # get total number of users
     users = data.__getitem__('user_id')
@@ -24,7 +31,7 @@ def users_total():
 ########################################################################################################################
 
 # get total number of artists
-def artists_total():
+def artists_total(data):
 
     artists = data.__getitem__('artist')
     artists = artists.unique()
@@ -35,7 +42,7 @@ def artists_total():
 
 
 # get total number of tracks
-def tracks_total():
+def tracks_total(data):
 
     tracks = data.__getitem__('track')
     tracks = tracks.unique()
@@ -44,37 +51,61 @@ def tracks_total():
 
 ########################################################################################################################
 
-def source_stats():
+# gets user stats
+def user_stats(data):
 
-    print(data.groupby('source', {'freq': gl.aggregate.COUNT('source')}).sort('freq', False))
-
-
-########################################################################################################################
-
-
-def artist_stats():
-
-    print(data.groupby('artist', {'freq': gl.aggregate.COUNT('artist')}).sort('freq', False))
+    # get user stats
+    users = data.groupby('user_id',
+                         {'count': gl.aggregate.COUNT('user_id')}).sort('count', ascending=False)
+    users.save('analysis/users_2016_04_06.csv')
 
 
 ########################################################################################################################
 
 
-def track_stats():
+# gets source stats
+def source_stats(data):
 
-    print(data.groupby('track', {'freq': gl.aggregate.COUNT('track')}).sort('freq', False))
+    # get source stats
+    source = (data.groupby('source', {'count': gl.aggregate.COUNT('source')}).sort('count', ascending=False))
+    source.save('analysis/source_2016_04_06.txt')
 
 
 ########################################################################################################################
 
 
-def artist_track_stats():
+# gets artist stats
+def artist_stats(data):
 
-    print(data.groupby('artist',
+    # get artist stats
+    artist = (data.groupby('artist', {'count': gl.aggregate.COUNT('artist')}).sort('count', ascending=False))
+    artist.save('analysis/artist_2016_04_06.txt')
+
+
+########################################################################################################################
+
+
+# gets track stats
+def track_stats(data):
+
+    # get track stats
+    track = (data.groupby('track', {'count': gl.aggregate.COUNT('track')}).sort('count', ascending=False))
+    track.save('analysis/track_2016_04_06.txt')
+
+
+########################################################################################################################
+
+
+# gets artist track stats
+def artist_track_stats(data):
+
+    # get artist track stats
+    artist_track = (data.groupby('artist',
                        {'track': gl.aggregate.SELECT_ONE('track')},
-                       {'artist freq': gl.aggregate.COUNT('artist')},
-                       {'track freq': gl.aggregate.COUNT('track')}
-                       ).sort('artist freq', False))
+                       {'artist count': gl.aggregate.COUNT('artist')},
+                       {'track count': gl.aggregate.COUNT('track')}
+                       ).sort('artist count', ascending=False))
+    artist_track.save('analysis/artist_track_2016_06_04.txt')
 
 
 ########################################################################################################################
@@ -83,23 +114,29 @@ def artist_track_stats():
 # main function
 def main():
 
-    # get total number of tweets
-    print 'Total number of tweets: {}'.format(len(data.__getitem__('timestamp')))
-    # get total number of users
-    # users_total()
-    # get total number of artists
-    # artists_total()
-    # get total number of tracks
-    tracks_total()
+    # load data
+    data = load_data()
 
+    # get total number of tweets
+    # print 'Total number of tweets: {}'.format(len(data.__getitem__('timestamp')))
+    # get total number of users
+    # users_total(data)
+    # get total number of artists
+    # artists_total(data)
+    # get total number of tracks
+    # tracks_total(data)
+
+    # get user_stats()
+    user_stats(data)
     # get source stats
-    # source_stats()
+    # source_stats(data)
     # get artist stats
-    # artist_stats()
+    # artist_stats(data)
     # get track stats
-    # track_stats()
+    # track_stats(data)
     # get artist track stats
-    # artist_track_stats()
+    # artist_track_stats(data)
+
 
 ########################################################################################################################
 
