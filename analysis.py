@@ -29,6 +29,7 @@ def users_total(data):
 
 ########################################################################################################################
 
+
 # get total number of artists
 def artists_total(data):
 
@@ -50,6 +51,7 @@ def tracks_total(data):
 
 ########################################################################################################################
 
+
 # gets filtered users
 def filtered_users():
 
@@ -68,22 +70,12 @@ def filtered_users():
 def user_stats(data):
 
     # get user stats
-    # users = (data.groupby('user_id', {'count': gl.aggregate.COUNT('user_id')}).sort('count', ascending=False))
-    # users.save('analysis/santi_count.csv')
+    users = (data.groupby('user_id', {'count': gl.aggregate.COUNT('user_id')}).sort('count', ascending=False))
+    users.save('analysis/user_count_2016_04_06.csv')
 
-    '''
-    mean_std = (data.groupby("user_id",
-                             {'argmax': gl.aggregate.ARGMAX('count', 'count')},
-                             {'argmin': gl.aggregate.ARGMIN('count', 'count')},
-                             {'mean': gl.aggregate.MEAN('count')},
-                             {'std': gl.aggregate.STD('count')}))
-    mean_std.save('analysis/santi_argmax_argmin_mean_std.csv')
-    '''
-
-    count = data.select_columns('count')
-    mean = count.
 
 ########################################################################################################################
+
 
 # gets source stats
 def source_stats(data):
