@@ -13,7 +13,7 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 
 #### Dataset
 
-This project makes use of the #nowplaying dataset which can be found at: http://dbis-nowplaying.uibk.ac.at/. A subset of the #nowplaying dataset was extracted using Reservoir Sampling, because the original dataset was too large (13GB). More information on the sampling workflow can be found in the report, accompanying this assignment. The subset extracted is stored on GitHub at the following path:
+This project makes use of the #nowplaying dataset which can be found [here](http://dbis-nowplaying.uibk.ac.at/). A subset of the #nowplaying dataset was extracted using Reservoir Sampling, because the original dataset was too large (13GB). More information on the sampling workflow can be found in the report, accompanying this assignment. The subset extracted is stored on GitHub at the following path:
 
 ```
 # in csv format
@@ -43,7 +43,7 @@ git clone https://github.com/YOUR-USERNAME/ucl-irdm-collaborative-filtering
 
 ##### Setting up GraphLab Create
 
-GraphLab Create is a machine learning framework provided by Dato. In order to use GraphLab Create a license is required. Dato's Academic Programme offers a 1-year free license of GraphLab Create. In order to obtain a license, visit https://dato.com/download/academic.html and register using a @ucl.ac.uk or @cs.ucl.ac.uk account.
+GraphLab Create is a machine learning framework provided by Dato. In order to use GraphLab Create a license is required. Dato's Academic Programme offers a 1-year free license of GraphLab Create. In order to obtain a license, click [here](https://dato.com/download/academic.html) and register using a @ucl.ac.uk or @cs.ucl.ac.uk account.
 
 Once you have obtained a GraphLab Create license, forked and cloned the repo, follow the steps below to continue setting up GraphLab Create:
 
@@ -230,4 +230,3 @@ dato/basic_rm/output/pop_recs.csv
 # popularity-based model similar items
 dato/basic_rm/output/pop_sim_items.csv
 ```
-
