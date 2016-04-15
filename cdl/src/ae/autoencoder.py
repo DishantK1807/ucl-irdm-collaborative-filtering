@@ -4,6 +4,7 @@ import time
 from os.path import join as pjoin
 
 import numpy as np
+import math
 import tensorflow as tf
 from utils.data import fill_feed_dict_ae, read_data_sets_pretraining
 from utils.data import read_data_sets, fill_feed_dict
@@ -275,12 +276,12 @@ def main_unsupervised():
     ae_hidden_shapes = [getattr(FLAGS, "hidden{0}_units".format(j + 1))
                         for j in xrange(num_hidden)]
     #ae_shape = [FLAGS.image_pixels] + ae_hidden_shapes + [FLAGS.num_classes]
-    ae_shape = [FLAGS.vocab_size] + ae_hidden_shapes
-
-    ae = AutoEncoder(ae_shape, sess)
 
     data = read_data_sets_pretraining(FLAGS.data_dir)
     num_train = data.train.num_examples # No. of training examples
+
+    ae_shape = [data.train.items.shape[1]] + ae_hidden_shapes
+    ae = AutoEncoder(ae_shape, sess)
 
     learning_rates = {j: getattr(FLAGS,
                                  "pre_layer{0}_learning_rate".format(j + 1))
@@ -329,7 +330,9 @@ def main_unsupervised():
         print("| Training Step | Cross Entropy |  Layer  |   Epoch  |")
         print("|---------------|---------------|---------|----------|")
 
-        for step in xrange(FLAGS.pretraining_epochs * num_train):
+        minibatches = int(math.ceil(num_train / FLAGS.batch_size))
+        # for step in xrange(FLAGS.pretraining_epochs * num_train):
+        for step in xrange(FLAGS.pretraining_epochs * minibatches):
 
             # feed_dict of input (with injected noise) and target
           feed_dict = fill_feed_dict_ae(data.train, input_, target_, noise[i])
@@ -337,8 +340,8 @@ def main_unsupervised():
           loss_summary, loss_value = sess.run([train_op, loss],
                                               feed_dict=feed_dict) # unsupervised training and loss
 
-          # if step % 100 == 0:
-          if step % FLAGS.batch_size == 0:
+          if step % 100 == 0:
+          # if step % FLAGS.batch_size == 0:
             summary_str = sess.run(summary_op, feed_dict=feed_dict)
             summary_writer.add_summary(summary_str, step)
             # image_summary_op = \

@@ -249,98 +249,10 @@ def read_items_matrix(filename):
     print('\nExtracting', filename)
     init = time.time()
 
-    # data = pd.read_table(gzip.open(filename),sep=',')
-    # data = []
-    # with gzip.open(filename) as infile:
-    #     for line in infile:
-    #         line = line.strip()
-    #
-    #         line = line.split(',')
-    #
-    #         data.append(line)
-
-    data = []
-    with gzip.open(filename) as infile:
-        for line in infile:
-            line = line.strip()
-
-            line = line.split(',')
-
-            data.append(line)
-
+    data = pd.read_table(gzip.open(filename),sep=',')
     print('\nData successfully loaded in %.2f seconds' % ((time.time() - init) / 1000))
-    return openPanda(data)
 
-    # return data
-
-
-def openPanda(data):
-    pandaData = pd.DataFrame(data)
-
-    return pandaData
-
-    # data = []
-    # import tensorflow as tf
-    # with tf.gfile.GFile('/Users/santteegt/tmp/cdl/data/citeulike-item-tfidf.txt.tar.gz', 'r') as f:
-    #     print(f.read(100))
-    # with gzip.open(filename) as f:
-    #     # buf = f.read(16980 * 8000 + 512)
-    #     buf = f.read()
-    #     buf = buf[512:]#.split(',')
-    #     vec = buf.split('\n')
-    #
-    #     data = numpy.zeros((8000, 1))
-    #     for row in vec:
-    #         numpy.append(data, numpy.reshape(row.split(','), (8000, 1)), 1)
-    #
-    #     data = numpy.asmatrix([numpy.fromstring(xi, sep=',') for xi in vec]).shape
-    #
-    #     matrix = numpy.core.defchararray.split(vec, ',')
-    #     # data = []
-    #     numFeatures = len(matrix[0])
-    #     data = numpy.asmatrix([numpy.reshape(numpy.asarray(xi), (numFeatures, 1)) for xi in matrix])
-    #     print(matrix.shape)
-    #     #data = numpy.frombuffer(buf, dtype=numpy.float32)
-    #     data = numpy.reshape(buf.split('\n').split(','), (8000, 16980))
-    #     # dt = numpy.dtype(numpy.float32).newbyteorder('>')
-    #     # data = numpy.frombuffer(buf, dtype=dt)
-    #     # data = numpy.reshape(data, (8000, 16980))
-    #     # data = numpy.fromfile(f.fileobj, dtype=numpy.float32, count=16980, sep=",")
-    #     # print(data.shape)
-    #     # data = numpy.genfromtxt(f, dtype=numpy.float32, delimiter=",", skip_footer=1, max_rows=1000)
-    #     # data = numpy.genfromtxt(f.fileobj, dtype="float32", delimiter=",")
-    #     first = True
-    #     i = 0
-    #     for line in f:
-    #         i = i+1
-    #         print(i)
-    #         if first:
-    #             item = line[512:].split(',')
-    #             data = numpy.append(data, item, 0)
-    #             data = numpy.reshape(data, (len(data), 1))
-    #             first = False
-    #         else:
-    #             item = line.split(',')
-    #             item = numpy.reshape(item, (len(item), 1))
-    #             data = numpy.append(data, item, 1)
-    #     data = data.T.astype(numpy.float32)
-    #
-    #     # for line in f:
-    #     #     if len(line) > 0:
-    #     #         data = numpy.append(data, line.split(','))
-    # #     data = numpy.fromfile(fileM.fileobj, dtype="float", sep=","data = numpy.fromfile(fileM.fileobj, dtype="float", sep=","))
-    # #     # #   data = None
-    # #     #   for line in f:
-    # #     #     if len(line) > 0:
-    # #     #       data = numpy.append(data, line.split(','))
-    # #     # print('la puta que te pario')
-    # #     # data = numpy.loadtxt(filename, dtype="string", delimiter=",")
-    # #     # print('la puta que te pario')
-    #     print(data)
-    #     print(data.shape)
-    #     print('la puta que te pario')
-    #     print('\nData successfully loaded in %.2f seconds' % ((time.time() - init) / 1000))
-    #     return data
+    return data.as_matrix()
 
 
 def read_data_sets_pretraining(train_dir):
