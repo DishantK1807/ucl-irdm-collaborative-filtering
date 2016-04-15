@@ -28,27 +28,30 @@ GraphLab Create is a machine learning framework provided by Dato. In order to us
 Once you have obtained a GraphLab Create license, forked the repo and then cloned, follow the steps below:
 
 ```bash
-cd ucl-irdm-collaborative-filtering
+# navigate to ucl-irdm-collaborative-filtering folder
+$ cd ucl-irdm-collaborative-filtering
+
+# navigate to dato folder
+$ cd dato
 ```
 
 ```bash
-cd dato
+# Create a new virtual environment with Python 2.7.x
+$ virtualenv -p /usr/bin/python2.7 dato-env
 ```
 
 ```bash
-virtualenv -p /usr/bin/python2.7 dato-env
+$ source dato-env/bin/activate
 ```
 
 ```bash
-source dato-env/bin/activate
+# Ensure pip is updated to the latest version
+$ pip install --upgrade pip
 ```
 
 ```bash
-pip install --upgrade pip
-```
-
-```bash
-pip install --upgrade --no-cache-dir pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.8.5/your registered email address here/your product key here/GraphLab-Create-License.tar.gz
+# Install your licensed copy of GraphLab Create
+$ pip install --upgrade --no-cache-dir pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.8.5/your registered email address here/your product key here/GraphLab-Create-License.tar.gz
 ```
 
 ##### Running Analysis
