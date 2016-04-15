@@ -14,3 +14,39 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 #### System Requirements
 
 #### Installation
+
+Fork repo then clone using:
+
+```bash
+git clone https://github.com/YOUR-USERNAME/ucl-irdm-collaborative-filtering
+```
+
+##### Setting up GraphLab Create
+
+GraphLab Create is a machine learning framework provided by Dato. In order to use GraphLab Create a license is required. Dato's Academic Programme offers a 1-year free license of GraphLab Create. In order to obtain a license, visit https://dato.com/download/academic.html and register using a @ucl.ac.uk or @cs.ucl.ac.uk account.
+
+Once you have obtained a GraphLab Create license, forked the repo and then cloned, follow the steps below:
+
+```bash
+# navigate to ucl-irdm-collaborative-filtering folder
+$ cd ucl-irdm-collaborative-filtering
+
+# navigate to dato folder
+$ cd dato
+
+# Create a new virtual environment with Python 2.7.x
+$ virtualenv -p /usr/bin/python2.7 dato-env
+
+# Activate the virtual environment
+$ source dato-env/bin/activate
+
+# Ensure pip is updated to the latest version
+$ pip install --upgrade pip
+
+# Install your licensed copy of GraphLab Create
+$ pip install --upgrade --no-cache-dir pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.8.5/your registered email address here/your product key here/GraphLab-Create-License.tar.gz
+```
+
+##### Running Analysis
+
+##### Running Basic Recommenders
