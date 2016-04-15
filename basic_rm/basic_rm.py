@@ -6,7 +6,7 @@ import graphlab as gl
 ########################################################################################################################
 
 # load data
-data = gl.SFrame.read_csv('data/nowplaying_subset.csv', delimiter=',', verbose=False)
+data = gl.SFrame.read_csv('../data/nowplaying_subset.csv', delimiter=',', verbose=False)
 
 ########################################################################################################################
 
@@ -20,13 +20,13 @@ def item_sim():
     recs = rm.recommend()
 
     # save recommendations to file
-    recs.save('recs/basic_rm/item_sim_recs.csv', format='csv')
+    recs.save('output/basic_rm/item_sim_recs.csv', format='csv')
 
     # get similar items
     sim_items = rm.get_similar_items()
 
     # save similar items to file
-    sim_items.save('recs/basic_rm/item_sim_sim_items.csv', format='csv')
+    sim_items.save('output/basic_rm/item_sim_sim_items.csv', format='csv')
 
 
 ########################################################################################################################
@@ -41,13 +41,13 @@ def rank_fact():
     recs = rm.recommend()
 
     # save recommendations to file
-    recs.save('recs/basic_rm/rank_fact_recs.csv', format='csv')
+    recs.save('output/basic_rm/rank_fact_recs.csv', format='csv')
 
     # get similar items
     sim_items = rm.get_similar_items()
 
     # save similar items to file
-    sim_items.save('recs/basic_rm/rank_fact_sim_items.csv', format='csv')
+    sim_items.save('output/basic_rm/rank_fact_sim_items.csv', format='csv')
 
 
 ########################################################################################################################
@@ -62,13 +62,13 @@ def pop():
     recs = rm.recommend()
 
     # save recommendations to file
-    recs.save('recs/basic_rm/pop_recs.csv', format='csv')
+    recs.save('output/basic_rm/pop_recs.csv', format='csv')
 
     # get similar items
     sim_items = rm.get_similar_items()
 
     # save similar items to file
-    sim_items.save('recs/basic_rm/pop_sim_items.csv', format='csv')
+    sim_items.save('output/basic_rm/pop_sim_items.csv', format='csv')
 
 
 ########################################################################################################################

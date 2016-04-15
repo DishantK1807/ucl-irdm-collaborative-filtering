@@ -9,7 +9,7 @@ import graphlab as gl
 def load_data():
 
     # load data
-    data = gl.SFrame.read_csv('analysis/santi_count.csv', delimiter=',', verbose=False)
+    data = gl.SFrame.read_csv('../data/nowplaying_subset.csv', delimiter=',', verbose=False)
 
     # return data
     return data
@@ -56,11 +56,11 @@ def tracks_total(data):
 def filtered_users():
 
     # get filtered users
-    user_id_item_id = gl.SFrame.read_csv('analysis/user_id_item_id_2016_04_06.csv', delimiter=',', verbose=False)
-    user_count_3 = gl.SArray('analysis/user_count_3_2016_04_06.csv')
+    user_id_item_id = gl.SFrame.read_csv('output/user_id_item_id_2016_04_06.csv', delimiter=',', verbose=False)
+    user_count_3 = gl.SArray('output/user_count_3_2016_04_06.csv')
 
     sample_count_3 = user_id_item_id.filter_by(user_count_3, 'user_id').sort('user_id', ascending=False)
-    sample_count_3.save('analysis/sample_count_3_2016_04_06.csv')
+    sample_count_3.save('output/sample_count_3_2016_04_06.csv')
 
 
 ########################################################################################################################
@@ -71,7 +71,7 @@ def user_stats(data):
 
     # get user stats
     users = (data.groupby('user_id', {'count': gl.aggregate.COUNT('user_id')}).sort('count', ascending=False))
-    users.save('analysis/user_count_2016_04_06.csv')
+    users.save('output/user_count_2016_04_06.csv')
 
 
 ########################################################################################################################
@@ -82,7 +82,7 @@ def source_stats(data):
 
     # get source stats
     source = (data.groupby('source', {'count': gl.aggregate.COUNT('source')}).sort('count', ascending=False))
-    source.save('analysis/source_2016_04_06.txt')
+    source.save('output/source_2016_04_06.txt')
 
 
 ########################################################################################################################
@@ -93,7 +93,7 @@ def artist_stats(data):
 
     # get artist stats
     artist = (data.groupby('artist', {'count': gl.aggregate.COUNT('artist')}).sort('count', ascending=False))
-    artist.save('analysis/artist_2016_04_06.txt')
+    artist.save('output/artist_2016_04_06.txt')
 
 
 ########################################################################################################################
@@ -104,7 +104,7 @@ def track_stats(data):
 
     # get track stats
     track = (data.groupby('track', {'count': gl.aggregate.COUNT('track')}).sort('count', ascending=False))
-    track.save('analysis/track_2016_04_06.txt')
+    track.save('output/track_2016_04_06.txt')
 
 
 ########################################################################################################################
@@ -119,7 +119,7 @@ def artist_track_stats(data):
                        {'artist count': gl.aggregate.COUNT('artist')},
                        {'track count': gl.aggregate.COUNT('track')}
                        ).sort('artist count', ascending=False))
-    artist_track.save('analysis/artist_track_2016_06_04.txt')
+    artist_track.save('output/artist_track_2016_06_04.txt')
 
 
 ########################################################################################################################
