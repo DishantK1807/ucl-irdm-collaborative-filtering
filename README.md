@@ -11,8 +11,6 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 
 #### Dataset
 
-#### Installation
-
 #### System Requirements
 
-
+#### Installation
