@@ -34,19 +34,77 @@ $ cd ucl-irdm-collaborative-filtering
 # navigate to dato folder
 $ cd dato
 
-# Create a new virtual environment with Python 2.7.x
+# create a new virtual environment with Python 2.7.x
 $ virtualenv -p /usr/bin/python2.7 dato-env
 
-# Activate the virtual environment
+# activate the virtual environment
 $ source dato-env/bin/activate
 
-# Ensure pip is updated to the latest version
+# ensure pip is updated to the latest version
 $ pip install --upgrade pip
 
-# Install your licensed copy of GraphLab Create
+# install your licensed copy of GraphLab Create
 $ pip install --upgrade --no-cache-dir pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.8.5/your registered email address here/your product key here/GraphLab-Create-License.tar.gz
+
+# when finished, deactivate the virtual environment
+$ deactivate
+
 ```
 
 ##### Running Analysis
 
+To run the Analysis, you need to run the analysis.py file by following the steps below:
+
+```bash
+# navigate to dato folder
+$ cd dato
+
+# activate the virtual environment
+$ source dato-env/bin/activate
+
+# navigate to analysis folder
+$ cd analysis
+
+# navigate to src folder
+$ cd src
+
+# run the analysis.py file
+$ python2.7 analysis.py
+
+# when done, deactivate the virtual environment
+$ deactivate
+```
+
+The output data is saved at the following path:
+
+
 ##### Running Basic Recommenders
+
+```bash
+# navigate to dato folder
+$ cd dato
+
+# activate the virtual environment
+$ source dato-env/bin/activate
+
+# navigate to basic_rm folder
+$ cd basic_rm
+
+# navigate to src folder
+$ cd src
+
+# run the basic_rm.py file with the preferred parameter
+# @param item_sim for item_similarity
+# @param rank_fact for factorization recommender for ranking
+# @param pop for popularity-based recommender
+$ python2.7 basic_rm.py --b_rm item_sim
+$ python2.7 basic_rm.py --b_rm rank_fact
+$ python2.7 basic_rm.py --b_rm pop
+
+# when done, deactivate the virtual environment
+$ deactivate
+```
+
+The output data is saved at the following path:
+
+
