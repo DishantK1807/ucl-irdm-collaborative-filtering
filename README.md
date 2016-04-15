@@ -5,9 +5,9 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 
 #### Group Members - MSc. Web Science and Big Data Analytics
 
-* [Santiago Gonzalez](https://github.com/santteegt)
-* [Archie Norman](https://github.com/archienorman11)
-* [Sergiu Tripon](https://github.com/SergiuTripon)
+* [Santiago Gonzalez](https://github.com/santteegt) | hernan.toral.15@ucl.ac.uk
+* [Archie Norman](https://github.com/archienorman11) | archie.norman.15@ucl.ac.uk
+* [Sergiu Tripon](https://github.com/SergiuTripon) | sergiu.tripon.15@ucl.ac.uk
 
 ---
 
