@@ -97,9 +97,9 @@ $ cd src
 # @param item_sim for item_similarity
 # @param rank_fact for factorization recommender for ranking
 # @param pop for popularity-based recommender
-$ python2.7 basic_rm.py --b_rm item_sim
-$ python2.7 basic_rm.py --b_rm rank_fact
-$ python2.7 basic_rm.py --b_rm pop
+$ python2.7 basic_rm.py -b_rm item_sim
+$ python2.7 basic_rm.py -b_rm rank_fact
+$ python2.7 basic_rm.py -b_rm pop
 
 # when done, deactivate the virtual environment
 $ deactivate
