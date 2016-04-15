@@ -75,11 +75,36 @@ $ python2.7 analysis.py
 $ deactivate
 ```
 
-The output data is saved at the following path:
+The `analysis.py` script saves the following files at the following paths:
 
 ```
-dato/analysis/output/
+# user stats
+dato/analysis/output/user_2016_04_06.csv
+# source stats
+dato/analysis/output/source_2016_04_06.csv
+# artist stats
+dato/analysis/output/artist_2016_04_06.csv
+# track stats
+dato/analysis/output/track_2016_04_06.csv
+# artist and track stats
+dato/analysis/output/artist_track_2016_04_06.csv
+
+# user id and item id from the full dataset
+user_id_item_id_2016_04_06.csv
+# user ids of users with 3 or more tweets
+user_count_3_2016_04_06.csv
+# filtered user id and item id of users with 3 or more tweets
+filtered_user_count_3_2016_04_06.csv
 ```
+
+The `analysis.py` also prints to terminal the following:
+
+1. Total number of tweets in the full dataset
+2. Total number of tweets in the subset
+3. Total number of users in the full dataset
+4. Total number of users in the subset
+5. Total number of artists in the full dataset
+6. Total number of tracks in the full dataset
 
 ##### Running Basic Recommenders
 
@@ -114,9 +139,22 @@ $ python2.7 basic_rm.py -b_rm pop
 $ deactivate
 ```
 
-The output data is saved at the following path:
+The `basic_rm.py` script saves the following files at the following paths:
 
 ```
-dato/basic_rm/output/
+# item similarity model recommendations
+dato/basic_rm/output/item_sim_recs.csv
+# item similarity model similar items
+dato/basic_rm/output/item_sim_sim_items.csv
+
+# factorization recommender for ranking model recommendations
+dato/basic_rm/output/rank_fact_recs.csv
+# factorization recommender for ranking model similar items
+dato/basic_rm/output/rank_fact_sim_items.csv
+
+# popularity-based model recommendations
+dato/basic_rm/output/pop_recs.csv
+# popularity-based model similar items
+dato/basic_rm/output/pop_sim_items.csv
 ```
 
