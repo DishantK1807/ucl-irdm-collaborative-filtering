@@ -13,7 +13,7 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 
 #### Dataset
 
-This project makes use of the #nowplaying dataset which can be found [here](http://dbis-nowplaying.uibk.ac.at/). A subset of the #nowplaying dataset was extracted using Reservoir Sampling, because the original dataset was too large (13GB). More information on the sampling workflow can be found in the report, accompanying this assignment. The subset extracted is stored on GitHub at the following path:
+This project makes use of the #nowplaying dataset which can be found <a href="http://dbis-nowplaying.uibk.ac.at/" target="_blank">here</a>. A subset of the #nowplaying dataset was extracted using Reservoir Sampling, because the original dataset was too large (13GB). More information on the sampling workflow can be found in the report, accompanying this assignment. The subset extracted is stored on GitHub at the following path:
 
 ```
 # in csv format
