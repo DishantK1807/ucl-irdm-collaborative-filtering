@@ -53,7 +53,7 @@ $ deactivate
 
 ##### Running Analysis
 
-To run the Analysis, you need to run the analysis.py file by following the steps below:
+To run the Analysis, you need to run the `analysis.py` file by following the steps below:
 
 ```bash
 # navigate to dato folder
@@ -69,16 +69,38 @@ $ cd analysis
 $ cd src
 
 # run the analysis.py file with the preferred parameter
+# @param tweet_total - total number of tweets
+# @param user_total - total number of users
+# @param artist_total - total number of artists
+# @param track_total - total number of tracks
+
+# @param user_stat - user statistics
+# @param source_stat - source statistics
+# @param artist_stat - artist statistics
+# @param track_stat - track statistics
+# @param artist_track_stat - artist track statistics
+# @param user_filtered - filtered user id item id containing users with 3 or more tweets
+
+# runs the tweet_total() function
 $ python2.7 analysis.py -s tweet_total
+# runs the user_total() function
 $ python2.7 analysis.py -s user_total
+# runs the artist_total() function
 $ python2.7 analysis.py -s artist_total
+# runs the track_total() function
 $ python2.7 analysis.py -s track_total
 
+# runs the user_stat() function
 $ python2.7 analysis.py -s user_stat
+# runs the source_stat() function
 $ python2.7 analysis.py -s source_stat
+# runs the artist_stat() function
 $ python2.7 analysis.py -s artist_stat
+# runs the track_stat() function
 $ python2.7 analysis.py -s track_stat
+# runs the artist_track_stat() function
 $ python2.7 analysis.py -s artist_track_stat
+# runs the user_filtered() function
 $ python2.7 analysis.py -s user_filtered
 
 # when done, deactivate the virtual environment
