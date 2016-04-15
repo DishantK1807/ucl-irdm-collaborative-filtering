@@ -33,7 +33,7 @@ GraphLab-Create
 
 ---
 
-#### Installation
+#### Set-up
 
 Fork this repository and then clone it by running the following command and entering your GitHub username and password:
 
