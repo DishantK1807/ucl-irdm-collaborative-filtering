@@ -15,7 +15,7 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 
 #### Installation
 
-Fork repo then clone using:
+Fork this repository and then clone it by running the following command:
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/ucl-irdm-collaborative-filtering
