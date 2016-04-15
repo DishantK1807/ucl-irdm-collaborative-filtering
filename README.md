@@ -9,8 +9,10 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 * [Archie Norman](https://github.com/archienorman11)
 * [Sergiu Tripon](https://github.com/SergiuTripon)
 
-### Installation
+#### Dataset
 
-### System Requirements
+#### Installation
+
+#### System Requirements
 
 
