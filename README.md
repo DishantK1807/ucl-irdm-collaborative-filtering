@@ -24,6 +24,7 @@ data/nowplaying_subset.csv.tar.gz
 #### System Requirements
 
 ```
+Python 2.7.x
 GraphLab-Create
 ```
 
