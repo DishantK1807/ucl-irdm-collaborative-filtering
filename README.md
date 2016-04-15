@@ -77,6 +77,9 @@ $ deactivate
 
 The output data is saved at the following path:
 
+```
+dato/analysis/output/
+```
 
 ##### Running Basic Recommenders
 
@@ -107,4 +110,7 @@ $ deactivate
 
 The output data is saved at the following path:
 
+```
+dato/basic_rm/output/
+```
 
