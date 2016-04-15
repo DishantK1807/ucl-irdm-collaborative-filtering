@@ -9,6 +9,8 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 * [Archie Norman](https://github.com/archienorman11)
 * [Sergiu Tripon](https://github.com/SergiuTripon)
 
+---
+
 #### Dataset
 
 This project makes use of the #nowplaying dataset which can be found at: http://dbis-nowplaying.uibk.ac.at/. A subset of the #nowplaying dataset was extracted using Reservoir Sampling, because the original dataset was too large (13GB). More information on the sampling workflow can be found in the report, accompanying this assignment. The subset extracted is stored on GitHub at the following path:
@@ -20,6 +22,7 @@ data/nowplaying_subset.csv
 # or in tar.gz format
 data/nowplaying_subset.csv.tar.gz
 ```
+---
 
 #### System Requirements
 
@@ -27,6 +30,8 @@ data/nowplaying_subset.csv.tar.gz
 Python 2.7.x
 GraphLab-Create
 ```
+
+---
 
 #### Installation
 
@@ -65,6 +70,8 @@ $ pip install --upgrade --no-cache-dir pip install --upgrade --no-cache-dir http
 $ deactivate
 
 ```
+
+---
 
 ##### Running Analysis
 
@@ -162,6 +169,8 @@ The `analysis.py` also prints to terminal the following:
 4. Total number of users in the subset
 5. Total number of artists in the full dataset
 6. Total number of tracks in the full dataset
+
+---
 
 ##### Running Basic Recommenders
 
