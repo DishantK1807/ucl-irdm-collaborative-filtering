@@ -15,9 +15,10 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 
 ### Overview
 
-1. [Dataset](#dataset)
-2. [System Requirements](#user-content-system-requirements)
-3. [Set-up](#set-up)
+1. [Report](https://github.com/santteegt/ucl-irdm-collaborative-filtering/raw/master/report/ucl_irdm_group_project_report.pdf) - downloads automatically
+2. [Dataset](#dataset)
+3. [System Requirements](#user-content-system-requirements)
+4. [Set-up](#set-up)
   1. [Setting up GraphLab Create](#user-content-setting-up-graphlab-create)
 5. [Running Analysis](#user-content-running-analysis)
 6. [Running Basic Recommenders](#user-content-running-basic-recommenders)
