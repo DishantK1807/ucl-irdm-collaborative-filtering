@@ -248,7 +248,12 @@ dato/basic_rm/output/pop_evaluation.csv
 2. Execute the following commands in a command shell under the home directory of this code repository:
 
 ```bash
-cd cdl
-source venv/bin/activate
-python src/run.py
+# navigate to cdl folder
+$ cd cdl
+
+# activate the virtual environment
+$ source venv/bin/activate
+
+# run the collaborative deep learning model
+$ python src/run.py
 ```
