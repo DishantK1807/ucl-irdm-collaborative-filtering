@@ -32,6 +32,9 @@ data/nowplaying_subset.csv
 # or in tar.gz format
 data/nowplaying_subset.csv.tar.gz
 ```
+
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
 ---
 
 ### System Requirements
@@ -186,6 +189,8 @@ dato/analysis/output/user_count_3_2016_04_06.csv
 dato/analysis/output/filtered_user_count_3_2016_04_06.csv
 ```
 
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
 ---
 
 #### Running Basic Recommenders
@@ -256,6 +261,10 @@ dato/basic_rm/output/pop_sim_items.csv
 dato/basic_rm/output/pop_evaluation.csv
 ```
 
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
+---
+
 #### Running Collaborative Deep Learning Model
 
 1. Execute the scripts `setup_cdl_linux` or the `setup_cdl_mac` depending on the OS you are using.
@@ -271,3 +280,6 @@ $ source venv/bin/activate
 # run the collaborative deep learning model
 $ python src/run.py
 ```
+
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
