@@ -1,11 +1,11 @@
 
 ## Collaborative filtering project using Deep Learning
 
-Coursework project developed as part of the [COMPGI15 - Information Retrieval and Data Mining](http://www.cs.ucl.ac.uk/teaching_learning/syllabus/mscml/gi15_information_retrieval_data_mining/) module at University College London
+This is a group project developed as part of the [COMPGI15 - Information Retrieval and Data Mining](http://www.cs.ucl.ac.uk/teaching_learning/syllabus/mscml/gi15_information_retrieval_data_mining/) module at University College London.
 
 ---
 
-### Group Members
+### Group 10 Members
 
 * [Santiago Gonzalez](https://github.com/santteegt) | hernan.toral.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
 * [Archie Norman](https://github.com/archienorman11) | archie.norman.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
@@ -15,9 +15,10 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 
 ### Overview
 
-1. [Dataset](#dataset)
-2. [System Requirements](#user-content-system-requirements)
-3. [Set-up](#set-up)
+1. [Report](https://github.com/santteegt/ucl-irdm-collaborative-filtering/raw/master/report/ucl_irdm_group_project_report.pdf) - downloads automatically
+2. [Dataset](#dataset)
+3. [System Requirements](#user-content-system-requirements)
+4. [Set-up](#set-up)
   1. [Setting up GraphLab Create](#user-content-setting-up-graphlab-create)
 5. [Running Analysis](#user-content-running-analysis)
 6. [Running Basic Recommenders](#user-content-running-basic-recommenders)
