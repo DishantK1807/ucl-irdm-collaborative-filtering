@@ -23,6 +23,8 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 6. [Running Basic Recommenders](#user-content-running-basic-recommenders)
 7. [Running Collaborative Deep Learning Model](#user-content-running-collaborative-deep-learning-model)
 
+---
+
 ### Dataset
 
 This project makes use of the #nowplaying dataset which can be found [here](http://dbis-nowplaying.uibk.ac.at/). A subset of the #nowplaying dataset was extracted using Reservoir Sampling, because the original dataset was too large (13GB). More information on the sampling workflow can be found in the report, accompanying this assignment. The subset extracted is stored on GitHub at the following path:
