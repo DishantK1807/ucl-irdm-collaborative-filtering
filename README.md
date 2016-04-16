@@ -3,13 +3,23 @@
 
 Coursework project developed as part of the [COMPGI15 - Information Retrieval and Data Mining](http://www.cs.ucl.ac.uk/teaching_learning/syllabus/mscml/gi15_information_retrieval_data_mining/) module at University College London
 
-### Group Members - MSc WSBDA (Web Science and Big Data Analytics)
+### Group Members
 
-* [Santiago Gonzalez](https://github.com/santteegt) | hernan.toral.15@ucl.ac.uk
-* [Archie Norman](https://github.com/archienorman11) | archie.norman.15@ucl.ac.uk
-* [Sergiu Tripon](https://github.com/SergiuTripon) | sergiu.tripon.15@ucl.ac.uk
+* [Santiago Gonzalez](https://github.com/santteegt) | hernan.toral.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
+* [Archie Norman](https://github.com/archienorman11) | archie.norman.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
+* [Sergiu Tripon](https://github.com/SergiuTripon) | sergiu.tripon.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
 
 ---
+
+### Overview
+
+1. [Dataset](#dataset)
+2. System Requirements
+3. Set-up
+4. Setting up GraphLab Create
+5. Running Analysis
+6. Running Basic Recommenders
+7. Running Collaborative Deep Learning Model
 
 ### Dataset
 
