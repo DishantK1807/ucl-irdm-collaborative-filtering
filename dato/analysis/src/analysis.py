@@ -166,41 +166,41 @@ def user_filtered(data):
 
 
 # main function
-def main(stat):
+def main(analysis):
 
     # load data and subset
     data = load_data()
     subset = load_subset()
 
-    if stat == 'tweet_total':
+    if analysis == 'tweet_total':
         # get total number of tweets in the full dataset and subset
         tweet_total(data, subset)
-    elif stat == 'user_total':
+    elif analysis == 'user_total':
         # get total number of users in the full dataset and subset
         user_total(data, subset)
-    elif stat == 'artist_total':
+    elif analysis == 'artist_total':
         # get total number of artists in the full dataset
         artist_total(data)
-    elif stat == 'track_total':
+    elif analysis == 'track_total':
         # get total number of tracks in the full dataset
         track_total(data)
 
-    if stat == 'user_stat':
+    if analysis == 'user_stat':
         # get user stats
         user_stat(data)
-    elif stat == 'source_stat':
+    elif analysis == 'source_stat':
         # get source stats
         source_stat(data)
-    elif stat == 'artist_stat':
+    elif analysis == 'artist_stat':
         # get artist stats
         artist_stat(data)
-    elif stat == 'track_stat':
+    elif analysis == 'track_stat':
         # get track stats
         track_stat(data)
-    elif stat == 'artist_track_stat':
+    elif analysis == 'artist_track_stat':
         # get artist track stats
         artist_track_stat(data)
-    elif stat == 'user_filtered':
+    elif analysis == 'user_filtered':
         # get users with 3 or more tweets
         user_filtered(data)
 
@@ -213,12 +213,12 @@ if __name__ == '__main__':
 
     # parse script argument
     parser = argparse.ArgumentParser()
-    parser.add_argument('-s', '--stat', type=str, dest='stat', metavar='stat name',
-                        help='stat name', required=True)
+    parser.add_argument('-a', '--analysis', type=str, dest='analysis', metavar='analysis type',
+                        help='analysis type', required=True)
     args = parser.parse_args()
 
     # call main function with the script argument as parameter
-    main(args.stat)
+    main(args.analysis)
 
 
 ########################################################################################################################
