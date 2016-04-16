@@ -3,11 +3,25 @@
 
 Coursework project developed as part of the [COMPGI15 - Information Retrieval and Data Mining](http://www.cs.ucl.ac.uk/teaching_learning/syllabus/mscml/gi15_information_retrieval_data_mining/) module at University College London
 
-### Group Members - MSc WSBDA (Web Science and Big Data Analytics)
+---
 
-* [Santiago Gonzalez](https://github.com/santteegt) | hernan.toral.15@ucl.ac.uk
-* [Archie Norman](https://github.com/archienorman11) | archie.norman.15@ucl.ac.uk
-* [Sergiu Tripon](https://github.com/SergiuTripon) | sergiu.tripon.15@ucl.ac.uk
+### Group Members
+
+* [Santiago Gonzalez](https://github.com/santteegt) | hernan.toral.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
+* [Archie Norman](https://github.com/archienorman11) | archie.norman.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
+* [Sergiu Tripon](https://github.com/SergiuTripon) | sergiu.tripon.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
+
+---
+
+### Overview
+
+1. [Dataset](#dataset)
+2. [System Requirements](#user-content-system-requirements)
+3. [Set-up](#set-up)
+  1. [Setting up GraphLab Create](#user-content-setting-up-graphlab-create)
+5. [Running Analysis](#user-content-running-analysis)
+6. [Running Basic Recommenders](#user-content-running-basic-recommenders)
+7. [Running Collaborative Deep Learning Model](#user-content-running-collaborative-deep-learning-model)
 
 ---
 
@@ -22,6 +36,9 @@ data/nowplaying_subset.csv
 # or in tar.gz format
 data/nowplaying_subset.csv.tar.gz
 ```
+
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
 ---
 
 ### System Requirements
@@ -30,6 +47,8 @@ data/nowplaying_subset.csv.tar.gz
 Python 2.7.x - required by GraphLab Create
 GraphLab-Create
 ```
+
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
 
 ---
 
@@ -71,9 +90,11 @@ $ deactivate
 
 ```
 
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
 ---
 
-#### Running Analysis
+### Running Analysis
 
 To run the Analysis, you need to run the `analysis.py` file by following the steps below:
 
@@ -172,9 +193,11 @@ dato/analysis/output/user_count_3_2016_04_06.csv
 dato/analysis/output/filtered_user_count_3_2016_04_06.csv
 ```
 
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
 ---
 
-#### Running Basic Recommenders
+### Running Basic Recommenders
 
 Basic Recommenders available:
 
@@ -242,7 +265,11 @@ dato/basic_rm/output/pop_sim_items.csv
 dato/basic_rm/output/pop_evaluation.csv
 ```
 
-#### Running Collaborative Deep Learning Model
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
+---
+
+### Running Collaborative Deep Learning Model
 
 1. Execute the scripts `setup_cdl_linux` or the `setup_cdl_mac` depending on the OS you are using.
 2. Execute the following commands in a command shell under the home directory of this code repository:
@@ -257,3 +284,6 @@ $ source venv/bin/activate
 # run the collaborative deep learning model
 $ python src/run.py
 ```
+
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
