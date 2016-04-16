@@ -64,7 +64,7 @@ $ source dato-env/bin/activate
 $ pip install --upgrade pip
 
 # install your licensed copy of GraphLab Create
-$ pip install --upgrade --no-cache-dir pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.8.5/your registered email address here/your product key here/GraphLab-Create-License.tar.gz
+$ pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.8.5/your registered email address here/your product key here/GraphLab-Create-License.tar.gz
 
 # when finished, deactivate the virtual environment
 $ deactivate
