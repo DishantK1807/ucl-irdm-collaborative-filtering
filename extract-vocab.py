@@ -139,4 +139,5 @@ if __name__ == '__main__':
 ########################################################################################################################
 
 
-    # sed 's/[^a-zA-Z0-9,-]/ /g' pre/output.csv > pre/clean_output.csv
+    # sed 's/[^a-zA-Z0-9,-.{}]/ /g' docs_tfidf.csv > test.csv
+    # sed '/^$/d;s/[[:blank:]]//g' test.csv > test1.csv
