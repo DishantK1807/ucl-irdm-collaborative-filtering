@@ -2,19 +2,30 @@
 # import packages
 import argparse
 import graphlab as gl
+import math
 
 ########################################################################################################################
 
 # load data
 data = gl.SFrame.read_csv('../../../data/nowplaying_subset.csv', delimiter=',', verbose=False)
 
+train_data, test_data = gl.recommender.util.random_split_by_user(data, max_num_users=int(math.floor(data.shape[0]/4)))
+# train_data, test_data = gl.recommender.util.random_split_by_user(data, max_num_users=5000)
+
 ########################################################################################################################
+
+
+def evaluate_model(model, model_name):
+    # mAP and recall evaluation for top-K items
+    eval = gl.recommender.util.compare_models(test_data, [model], model_names=[model_name])
+    eval[0]['precision_recall_overall'].save('../output/{0}_evaluation.csv'.format(model_name), format='csv')
+    return eval
 
 
 def item_sim():
 
     # create item similarity recommender
-    rm = gl.item_similarity_recommender.create(data)
+    rm = gl.item_similarity_recommender.create(train_data)
 
     # make recommendations
     recs = rm.recommend()
@@ -28,6 +39,8 @@ def item_sim():
     # save similar items to file
     sim_items.save('../output/item_sim_sim_items.csv', format='csv')
 
+    evaluate_model(rm, 'item_sim')
+
 
 ########################################################################################################################
 
@@ -35,7 +48,7 @@ def item_sim():
 def rank_fact():
 
     # create ranking factorization recommender
-    rm = gl.ranking_factorization_recommender.create(data)
+    rm = gl.ranking_factorization_recommender.create(train_data)
 
     # make recommendations
     recs = rm.recommend()
@@ -49,6 +62,8 @@ def rank_fact():
     # save similar items to file
     sim_items.save('../output/rank_fact_sim_items.csv', format='csv')
 
+    evaluate_model(rm, 'rank_fact')
+
 
 ########################################################################################################################
 
@@ -56,7 +71,7 @@ def rank_fact():
 def pop():
 
     # create popularity recommender
-    rm = gl.popularity_recommender.create(data)
+    rm = gl.popularity_recommender.create(train_data)
 
     # make recommendations
     recs = rm.recommend()
@@ -69,6 +84,8 @@ def pop():
 
     # save similar items to file
     sim_items.save('../output/pop_sim_items.csv', format='csv')
+
+    evaluate_model(rm, 'pop')
 
 
 ########################################################################################################################
