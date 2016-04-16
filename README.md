@@ -220,15 +220,24 @@ dato/basic_rm/output/item_sim_recs.csv
 # item similarity model similar items
 dato/basic_rm/output/item_sim_sim_items.csv
 
+# item similarity model evaluation
+dato/basic_rm/output/item_sim_evaluation.csv
+
 # factorization recommender for ranking model recommendations
 dato/basic_rm/output/rank_fact_recs.csv
 
 # factorization recommender for ranking model similar items
 dato/basic_rm/output/rank_fact_sim_items.csv
 
-# popularity-based model recommendations
+# factorization recommender for ranking model evaluation
+dato/basic_rm/output/rank_fact_evaluation.csv
+
+# popularity-based recommender model recommendations
 dato/basic_rm/output/pop_recs.csv
 
-# popularity-based model similar items
+# popularity-based recommender model similar items
 dato/basic_rm/output/pop_sim_items.csv
+
+# popularity-based recommender model evaluation
+dato/basic_rm/output/pop_evaluation.csv
 ```
