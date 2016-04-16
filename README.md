@@ -64,7 +64,7 @@ $ source dato-env/bin/activate
 $ pip install --upgrade pip
 
 # install your licensed copy of GraphLab Create
-$ pip install --upgrade --no-cache-dir pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.8.5/your registered email address here/your product key here/GraphLab-Create-License.tar.gz
+$ pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.8.5/your registered email address here/your product key here/GraphLab-Create-License.tar.gz
 
 # when finished, deactivate the virtual environment
 $ deactivate
@@ -129,7 +129,16 @@ $ python2.7 analysis.py --analysis user_filtered
 $ deactivate
 ```
 
-The `analysis.py` script saves the following files at the following paths:
+The `analysis.py` prints to terminal the following:
+
+1. Total number of tweets in the full dataset
+2. Total number of tweets in the subset
+3. Total number of users in the full dataset
+4. Total number of users in the subset
+5. Total number of artists in the full dataset
+6. Total number of tracks in the full dataset
+
+The `analysis.py` script also saves the following files at the following paths:
 
 **Note**: The date `2016_04_06` in the filenames below represents the date version of the #nowplaying dataset.
 
@@ -162,15 +171,6 @@ dato/analysis/output/user_count_3_2016_04_06.csv
 # uploaded to GitHub as an example
 dato/analysis/output/filtered_user_count_3_2016_04_06.csv
 ```
-
-The `analysis.py` also prints to terminal the following:
-
-1. Total number of tweets in the full dataset
-2. Total number of tweets in the subset
-3. Total number of users in the full dataset
-4. Total number of users in the subset
-5. Total number of artists in the full dataset
-6. Total number of tracks in the full dataset
 
 ---
 
