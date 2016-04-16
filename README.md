@@ -5,7 +5,7 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 
 ---
 
-### Group Members
+### Group 10 Members
 
 * [Santiago Gonzalez](https://github.com/santteegt) | hernan.toral.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
 * [Archie Norman](https://github.com/archienorman11) | archie.norman.15@ucl.ac.uk | MSc WSBDA (Web Science and Big Data Analytics)
