@@ -41,6 +41,8 @@ Python 2.7.x - required by GraphLab Create
 GraphLab-Create
 ```
 
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
+
 ---
 
 ### Set-up
@@ -80,6 +82,8 @@ $ pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.8.
 $ deactivate
 
 ```
+
+[Go to top](#user-content-collaborative-filtering-project-using-deep-learning)
 
 ---
 
