@@ -113,17 +113,17 @@ $ python2.7 analysis.py -s artist_total
 $ python2.7 analysis.py -s track_total
 
 # runs the user_stat() function
-$ python2.7 analysis.py -s user_stat
+$ python2.7 analysis.py --stat user_stat
 # runs the source_stat() function
-$ python2.7 analysis.py -s source_stat
+$ python2.7 analysis.py --stat source_stat
 # runs the artist_stat() function
-$ python2.7 analysis.py -s artist_stat
+$ python2.7 analysis.py --stat artist_stat
 # runs the track_stat() function
-$ python2.7 analysis.py -s track_stat
+$ python2.7 analysis.py --stat track_stat
 # runs the artist_track_stat() function
-$ python2.7 analysis.py -s artist_track_stat
+$ python2.7 analysis.py --stat artist_track_stat
 # runs the user_filtered() function
-$ python2.7 analysis.py -s user_filtered
+$ python2.7 analysis.py --stat user_filtered
 
 # when done, deactivate the virtual environment
 $ deactivate
@@ -201,11 +201,11 @@ $ cd src
 # @param pop for popularity-based recommender
 
 # runs the item_sim() function
-$ python2.7 basic_rm.py -b_rm item_sim
+$ python2.7 basic_rm.py --basic_rm item_sim
 # runs the rank_fact() function
-$ python2.7 basic_rm.py -b_rm rank_fact
+$ python2.7 basic_rm.py --basic_rm rank_fact
 # runs the pop() function
-$ python2.7 basic_rm.py -b_rm pop
+$ python2.7 basic_rm.py --basic_rm pop
 
 # when done, deactivate the virtual environment
 $ deactivate
