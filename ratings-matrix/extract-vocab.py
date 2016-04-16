@@ -109,19 +109,17 @@ if __name__ == '__main__':
 
     # temp1 = pd.read_csv("data/musicbrainz/removePunctuation.csv", skipinitialspace=True)
 
-    temp1 = np.genfromtxt("../data/musicbrainz/removePunctuation.csv", delimiter=",", filling_values=None)
+    # temp1 = np.genfromtxt("../data/musicbrainz/removePunctuation.csv", delimiter=",", filling_values=None)
 
-    # temp = SArray('data/musicbrainz/removePunctuation.csv')
+    temp = SArray('../data/musicbrainz/removePunctuation.csv')
 
-    print(temp1)
+    docs_tfidf = gl.text_analytics.tf_idf(temp)
 
-    # docs_tfidf = gl.text_analytics.tf_idf(temp)
-    #
-    # print (docs_tfidf)
-    #
-    # docs_tfidf.save('data/musicbrainz/docs_tfidf')
-    #
-    # docs_tfidf.save('data/musicbrainz/docs_tfidf.csv', format='csv')
+    print (docs_tfidf)
+
+    docs_tfidf.save('../data/musicbrainz/docs_tfidf')
+
+    docs_tfidf.save('../data/musicbrainz/docs_tfidf.csv', format='csv')
 
 
 
