@@ -14,12 +14,12 @@ Coursework project developed as part of the [COMPGI15 - Information Retrieval an
 ### Overview
 
 1. [Dataset](#dataset)
-2. System Requirements
-3. Set-up
-4. Setting up GraphLab Create
-5. Running Analysis
-6. Running Basic Recommenders
-7. Running Collaborative Deep Learning Model
+2. [System Requirements](#system_requirements)
+3. [Set-up](#set-up)
+4. [Setting up GraphLab Create](setting-up-graphlab-create)
+5. [Running Analysis](#running-analysis)
+6. [Running Basic Recommenders](#running-basic-recommenders)
+7. [Running Collaborative Deep Learning Model](#running-collaborative-deep-learning-model)
 
 ### Dataset
 
