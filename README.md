@@ -103,26 +103,26 @@ $ cd src
 # @param artist_track_stat - artist track statistics
 # @param user_filtered - filtered user id item id containing users with 3 or more tweets
 
-# runs the tweet_total() function
+# runs the tweet_total() function, prints output to terminal
 $ python2.7 analysis.py --analysis tweet_total
-# runs the user_total() function
+# runs the user_total() function, prints output to terminal
 $ python2.7 analysis.py --analysis user_total
-# runs the artist_total() function
+# runs the artist_total() function, prints output to terminal
 $ python2.7 analysis.py --analysis artist_total
-# runs the track_total() function
+# runs the track_total() function, prints output to terminal
 $ python2.7 analysis.py --analysis track_total
 
-# runs the user_stat() function
+# runs the user_stat() function, saves output to file
 $ python2.7 analysis.py --analysis user_stat
-# runs the source_stat() function
+# runs the source_stat() function, saves output to file
 $ python2.7 analysis.py --analysis source_stat
-# runs the artist_stat() function
+# runs the artist_stat() function, saves output to file
 $ python2.7 analysis.py --analysis artist_stat
-# runs the track_stat() function
+# runs the track_stat() function, saves output to file
 $ python2.7 analysis.py --analysis track_stat
-# runs the artist_track_stat() function
+# runs the artist_track_stat() function, saves output to file
 $ python2.7 analysis.py --analysis artist_track_stat
-# runs the user_filtered() function
+# runs the user_filtered() function, saves output to file
 $ python2.7 analysis.py --analysis user_filtered
 
 # when done, deactivate the virtual environment
