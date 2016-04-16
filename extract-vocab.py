@@ -7,6 +7,7 @@
 # import packages
 import time
 import graphlab as gl
+from graphlab import SArray
 
 
 ########################################################################################################################
@@ -66,6 +67,8 @@ def aggregateData(filename):
 
 if __name__ == '__main__':
 
+    print ("initialising...")
+
     track_data, track_record_tags, track_artist_tags = loadData()
 
     # track_data.save('track_data'), track_record_tags.save('track_record_tags'), track_artist_tags.save('track_artist_tags')
@@ -97,6 +100,18 @@ if __name__ == '__main__':
     aggregatedData.save('data/musicbrainz/aggregatedData')
 
     aggregatedData.save('data/musicbrainz/aggregatedData.csv', format='csv')
+
+    temp = SArray('data/musicbrainz/aggregatedData.csv')
+
+    # print(temp)
+
+    docs_tfidf = gl.text_analytics.tf_idf(temp)
+
+    print (docs_tfidf)
+
+    docs_tfidf.save('data/musicbrainz/docs_tfidf')
+
+    docs_tfidf.save('data/musicbrainz/docs_tfidf.csv', format='csv')
 
 
 
