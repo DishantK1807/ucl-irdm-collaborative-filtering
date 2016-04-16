@@ -5,40 +5,103 @@
 
 
 # import packages
-import argparse
+import time
 import graphlab as gl
+
 
 ########################################################################################################################
 
 
 # loads data
-def load_data():
+def loadData():
 
     # load data
     print ("starting to load the data...")
 
-    track_data = gl.SFrame.read_csv('data/musicbrainz/track_data.csv', delimiter=';', verbose=False)
+    start = time.time()
 
-    track_record_tags = gl.SFrame.read_csv('data/musicbrainz/track_record_tags.csv', delimiter=';', verbose=False)
+    track_data = gl.SFrame.read_csv('data/musicbrainz/track_data.csv', delimiter=',', verbose=False, header=True)
 
-    track_artist_tags = gl.SFrame.read_csv('data/musicbrainz/track_artist_tags.csv', delimiter=';', verbose=False)
+    track_record_tags = gl.SFrame.read_csv('data/musicbrainz/track_record_tags.csv', delimiter=',', verbose=False, header=True)
+
+    track_artist_tags = gl.SFrame.read_csv('data/musicbrainz/track_artist_tags.csv', delimiter=',', verbose=False, header=True)
+
+    end = time.time()
 
     # return data
-    print("data loaded...")
+    print("data loaded in %d ...", start-end)
 
     return track_data, track_record_tags, track_artist_tags
 
+
+########################################################################################################################
+
+
+# loads data
+def aggregateData(filename):
+
+    # load data
+    print ("aggregating the data...")
+
+    start = time.time()
+
+    aggregatedData = filename.groupby("gid", operations = {
+
+                    "tags": gl.aggregate.CONCAT("tag_label", "tag_label.1"),
+                    "artists": gl.aggregate.SELECT_ONE("artistname"),
+                    "track_names": gl.aggregate.SELECT_ONE("trackname")
+
+                    })
+
+    end = time.time()
+
+    # return data
+    print("aggregated in %d ...", start-end)
+
+    return aggregatedData
+
+
+########################################################################################################################
+
+
 if __name__ == '__main__':
 
-    track_data, track_record_tags, track_artist_tags = load_data()
+    track_data, track_record_tags, track_artist_tags = loadData()
+
+    # track_data.save('track_data'), track_record_tags.save('track_record_tags'), track_artist_tags.save('track_artist_tags')
 
     print ("merging...")
 
+    start = time.time()
+
     merged = track_data.join(track_record_tags, on='gid', how='left')
 
-    print ("printing...")
+    print ("first merge complete...")
 
-    print(merged)
+    data_matrix = merged.join(track_artist_tags, on='gid', how='left')
+
+    end = time.time()
+
+    print ("completed merge in %d, now printing...", start-end)
+
+    print(data_matrix)
+
+    data_matrix.save('data/musicbrainz/matrix')
+
+    # data_matrix.save('data/musicbrainz/matrix.csv', format='csv')
+
+    aggregatedData = aggregateData(data_matrix)
+
+    print(aggregatedData)
+
+    aggregatedData.save('data/musicbrainz/aggregatedData')
+
+    aggregatedData.save('data/musicbrainz/aggregatedData.csv', format='csv')
+
+
+
+
+########################################################################################################################
 
 
     # print ("starting to load the data...\n")
@@ -56,6 +119,9 @@ if __name__ == '__main__':
     # merged.to_csv("data/musicbrainz/merged.csv", index=False)
     #
     # print ("...exported to csv \n")
+
+
+########################################################################################################################
 
 
     # sed 's/[^a-zA-Z0-9,-]/ /g' pre/output.csv > pre/clean_output.csv
