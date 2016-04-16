@@ -3,40 +3,59 @@
 # at the end we need to have a TxV matrix where T is the number of tracks and
 # the V is the vocabulary size.
 
-import pandas as pd
-import numpy as np
-from collections import defaultdict
-from collections import Counter
 
-import csv
-
-np.set_printoptions(threshold=np.nan)
-
+# import packages
+import argparse
+import graphlab as gl
 
 ########################################################################################################################
 
 
+# loads data
+def load_data():
+
+    # load data
+    print ("starting to load the data...")
+
+    track_data = gl.SFrame.read_csv('data/musicbrainz/track_data.csv', delimiter=';', verbose=False)
+
+    track_record_tags = gl.SFrame.read_csv('data/musicbrainz/track_record_tags.csv', delimiter=';', verbose=False)
+
+    track_artist_tags = gl.SFrame.read_csv('data/musicbrainz/track_artist_tags.csv', delimiter=';', verbose=False)
+
+    # return data
+    print("data loaded...")
+
+    return track_data, track_record_tags, track_artist_tags
 
 if __name__ == '__main__':
 
-    print ("starting to load the data...\n")
+    track_data, track_record_tags, track_artist_tags = load_data()
 
-    df1 = pd.read_csv("data/musicbrainz/track_artist_tags.csv", sep=';')
+    print ("merging...")
 
-    df2 = pd.read_csv("data/musicbrainz/track_data.csv", sep=';')
+    merged = track_data.join(track_record_tags, on='gid', how='left')
 
-    print ("...loading complete, now writing to file \n")
+    print ("printing...")
 
-    merged = df1.merge(df2, on="gid", how="outer").fillna("")
-
-    print ("...merged \n")
-
-    merged.to_csv("data/musicbrainz/merged.csv", index=False)
-
-    print ("...exported to csv \n")
+    print(merged)
 
 
+    # print ("starting to load the data...\n")
+    #
+    # df1 = pd.read_csv("data/musicbrainz/track_artist_tags.csv", sep=';')
+    #
+    # df2 = pd.read_csv("data/musicbrainz/track_data.csv", sep=';')
+    #
+    # print ("...loading complete, now merging \n")
+    #
+    # merged = df1.merge(df2, on="gid", how="outer").fillna("")
+    #
+    # print ("...merged \n")
+    #
+    # merged.to_csv("data/musicbrainz/merged.csv", index=False)
+    #
+    # print ("...exported to csv \n")
 
 
-    #CLEAN
     # sed 's/[^a-zA-Z0-9,-]/ /g' pre/output.csv > pre/clean_output.csv
